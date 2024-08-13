@@ -1,6 +1,8 @@
 import sys 
 import logging
 
+from src.logger import logging # 不然不能正确logging
+
 
 def error_message_detail(error, error_detail:sys):
     _, _, exc_tb = error_detail.exc_info() # exc_tb 储存 error 的具体信息位置
