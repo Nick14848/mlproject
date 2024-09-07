@@ -113,6 +113,7 @@ class ModelTrainer:
             logging.info(f"Best found model on both training and testing dataset")
 
             # 把 model 存在 artifacts
+            # 将训练好的模型保存到 "artifacts/model.pkl" 这个路径下
             save_object(
                 # 获取 file_path
                 file_path=self.model_trainer_config.trained_model_file_path,
@@ -120,7 +121,6 @@ class ModelTrainer:
             )
 
             predicted=best_model.predict(X_test)
-
             r2_square = r2_score(y_test, predicted)
             return r2_square
    

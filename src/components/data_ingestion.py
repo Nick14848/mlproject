@@ -1,6 +1,4 @@
 # 目的: 从某个 source 读取数据, 然后 train_test_split
-
-
 import os
 import sys # 因为我们要用 exception
 from src.exception import CustomException
@@ -61,7 +59,8 @@ if __name__=="__main__":
 
     # Data Transformation
     data_transformation=DataTransformation()
-    train_arr,test_arr,_=data_transformation.initiate_data_transformation(train_data,test_data)
+    train_arr, test_arr, _ = data_transformation.initiate_data_transformation(train_data,test_data)
 
+    # model_trainer
     modeltrainer=ModelTrainer()
-    print(modeltrainer.initiate_model_trainer(train_arr,test_arr))
+    print(modeltrainer.initiate_model_trainer(train_arr,test_arr)) # print R^2 score
