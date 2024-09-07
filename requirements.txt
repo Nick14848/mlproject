@@ -7,4 +7,5 @@ wheel
 catboost
 xgboost
 dill
+flask
 #-e .
