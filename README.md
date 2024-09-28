@@ -102,8 +102,7 @@ Driven by a strong passion in education, I embarked on this project to:
     python application.py
     ```
     - This will start the Flask web application.
-    - Open your web browser and navigate to [http://localhost:5000](http://localhost:5000) to interact with the application.
-    - Or [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+    - Open your web browser and navigate to [http://127.0.0.1:5000/](http://127.0.0.1:5000/) to interact with the application.
 
 ### Running the Deployed Application
 
