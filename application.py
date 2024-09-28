@@ -33,8 +33,8 @@ def predict_datapoint():
             parental_level_of_education=request.form.get('parental_level_of_education'),
             lunch=request.form.get('lunch'),
             test_preparation_course=request.form.get('test_preparation_course'),
-            reading_score=float(request.form.get('writing_score')),
-            writing_score=float(request.form.get('reading_score'))
+            reading_score=float(request.form.get('reading_score')),
+            writing_score=float(request.form.get('writing_score'))
         )
         
         # 将输入数据转为 Pandas DataFrame
@@ -45,15 +45,25 @@ def predict_datapoint():
         # 加载机器学习的预测管道（模型和处理流程），并对输入数据进行预测
         predict_pipeline=PredictPipeline()
         print("Mid Prediction")
-        results=predict_pipeline.predict(pred_df)
+        results = predict_pipeline.predict(pred_df)
         print("after Prediction")
+        print("Prediction results:", results)
+        
+        # Handle invalid predictions by setting negative scores to 0
+        predictions = []
+        for score in results:
+            if score < 0:
+                predictions.append(0)
+            else:
+                predictions.append(round(score, 2))  # Round to 2 decimal places if desired
+                    
         # 将预测结果渲染到 home.html 模板中，显示给用户
-        return render_template('home.html',results=results[0]) # results 是 list format
+        return render_template('home.html',results = predictions[0]) # results 是 list format
     
 # 启动 Flask 开发服务器
 if __name__=="__main__": # 如果当前文件是作为主程序运行，就启动 Flask 开发服务器
     # 将服务器绑定到所有 IP 地址
-    app.run(host="0.0.0.0")    
+    app.run(host="0.0.0.0", debug=True)    
 
 '''
 __name__ 是 Python 的一个特殊变量，用来识别当前模块的名称
@@ -63,3 +73,4 @@ __name__ 是 Python 的一个特殊变量，用来识别当前模块的名称
 if __name__ == "__main__" 的作用是确保某些代码（如启动 Flask 服务器的代码）只会在文件被直接运行时执行，
 而不会在文件被导入到其他模块时执行，避免不必要的行为或冲突
 '''
+

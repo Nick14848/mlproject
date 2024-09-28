@@ -6,6 +6,11 @@ This project addresses the challenge of predicting student performance in exams 
 
 ## Screenshot of UI
 
+![UI Screenshot](screenshots/home.jpg)
+*Caption: User interface of the Student Performance Prediction web application.*
+
+![UI Screenshot](screenshots/output.jpg)
+*Caption: Enter features to get the predicted score.*
 
 ## Table of Contents
 
@@ -13,7 +18,7 @@ This project addresses the challenge of predicting student performance in exams 
 - [Dataset and Features](#dataset-and-features)
 - [Methodology](#methodology)
 - [How to Run](#how-to-run)
-- [Furture Work](#Future-work)
+- [Future Work](#Future-work)
 - [References](#references)
 
 ## Project Motivation
@@ -43,12 +48,27 @@ Driven by a strong passion in education, I embarked on this project to:
 
 ## Methodology
 
-** Exploratory Data Analysis Notebook **
-- Link: [EDA Notebook](#mlproject/notebook/EDA_STUDENT_PERFORMANCE.ipynb)
+**Exploratory Data Analysis Notebook**
+- Link: [EDA Notebook](notebook/EDA_STUDENT_PERFORMANCE.ipynb)
 
-** Exploratory Data Analysis Notebook **
-- Link: [Model Training Notebook](#mlproject/notebook/MODEL_TRAINING.ipynb)
+**Model Training Notebook**
+- Link: [Model Training Notebook](notebook/MODEL_TRAINING.ipynb)
 
+## Results and Analysis
+
+- **Model Performance:**
+  - The **Random Forest Regressor** achieved the highest R² score of **0.85** on the test set, outperforming the baseline **Linear Regression** model by **20%** in terms of MAE.
+
+- **Key Insights:**
+  - **Test Preparation Course Completion** was the most significant factor influencing student performance.
+  - **Parental Level of Education** and **Lunch Status** also played crucial roles in determining exam scores.
+
+- **Visualizations:**
+  - ![Model Comparison](path_to_model_comparison.png)
+  *Caption: Comparison of MAE across different regression models.*
+
+  - ![Feature Importance](path_to_feature_importance.png)
+  *Caption: Feature importance plot from the Random Forest model.*
 
 ## How to Run
 
@@ -101,7 +121,7 @@ Driven by a strong passion in education, I embarked on this project to:
 ## References
 
 - **Youtube Tutorials**
- - [Krish Naik](https://github.com/krishnaik06/Student-Performance-Azure-deployment)
+  - [Krish Naik](https://www.youtube.com/@krishnaik06)
 
 - **Dataset:**
   - [Students Performance in Exams | Kaggle](https://www.kaggle.com/datasets/spscientist/students-performance-in-exams?datasetId=74977)

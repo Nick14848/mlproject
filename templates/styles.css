@@ -1,0 +1,49 @@
+/* static/css/styles.css */
+
+/* Global Styles */
+body {
+    background-color: #f8f9fa;
+}
+
+h1, h2, h3 {
+    color: #343a40;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.btn-primary {
+    width: 100%;
+    background-color: #007bff;
+    border: none;
+}
+
+/* Form Styles */
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 2rem;
+}
+
+img.img-fluid {
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+
+/* Footer Styles */
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+}
