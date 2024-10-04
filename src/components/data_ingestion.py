@@ -22,7 +22,7 @@ class DataIngestionConfig:
 
 class DataIngestion:
     def __init__(self):
-        self.ingestion_config=DataIngestionConfig()
+        self.ingestion_config = DataIngestionConfig()
 
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method or component")
@@ -41,12 +41,11 @@ class DataIngestion:
 
             test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True)
 
-            logging.info("Inmgestion of the data iss completed")
+            logging.info("Ingestion of the data is completed")
 
             return(
                 self.ingestion_config.train_data_path,
                 self.ingestion_config.test_data_path
-
             )
         except Exception as e:
             raise CustomException(e,sys)

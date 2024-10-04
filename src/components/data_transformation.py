@@ -39,7 +39,7 @@ class DataTransformation:
                 "test_preparation_course",
             ]
             
-            # 数值的 pipeline, handle missing values + perform standard scaler
+            # 数值的 pipeline: handle missing values + perform standard scaler
             num_pipeline= Pipeline(
                 steps=[
                 ("imputer",SimpleImputer(strategy="median")),
@@ -48,7 +48,7 @@ class DataTransformation:
                 ]
             )
             
-            # 类别的 pipeline
+            # 类别的 pipeline: handle missing values + perform one hot encoding + perform standard scaler
             cat_pipeline = Pipeline(
                 steps=[
                     ("imputer", SimpleImputer(strategy="most_frequent")),
@@ -57,7 +57,6 @@ class DataTransformation:
                 ]
             )
             
-            # 
             logging.info(f"Numerical columns: {numerical_columns}")
             logging.info(f"Categorical columns: {categorical_columns}")
             
@@ -101,13 +100,10 @@ class DataTransformation:
             test_arr = np.c_[input_feature_test_arr, np.array(target_feature_test_df)]
 
             logging.info(f"Saved preprocessing object.")
-            
-            # 
+        
             save_object(
-
                 file_path=self.data_transformation_config.preprocessor_obj_file_path,
                 obj=preprocessing_obj
-
             )
 
             return (

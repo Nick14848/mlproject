@@ -42,8 +42,8 @@ def predict_datapoint():
         print(pred_df)
         print("Before Prediction")
         
-        # 加载机器学习的预测管道（模型和处理流程），并对输入数据进行预测
-        predict_pipeline=PredictPipeline()
+        # 加载机器学习的预测 pipeline（模型和处理流程），并对输入数据进行预测
+        predict_pipeline = PredictPipeline()
         print("Mid Prediction")
         results = predict_pipeline.predict(pred_df)
         print("after Prediction")

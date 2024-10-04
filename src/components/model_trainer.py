@@ -27,7 +27,7 @@ from src.utils import save_object, evaluate_models
 # 定义了一个配置类 ModelTrainerConfig，用来存储保存模型文件的路径
 @dataclass
 class ModelTrainerConfig:
-    trained_model_file_path=os.path.join("artifacts","model.pkl") # "artifacts/model.pkl" on Linux/macOS or "artifacts\\model.pkl" on Windows
+    trained_model_file_path = os.path.join("artifacts","model.pkl") # "artifacts/model.pkl" on Linux/macOS or "artifacts\\model.pkl" on Windows
 # @dataclass decorator is used to define a class that primarily stores data
 # dataclass simplifies the process of creating classes that are mainly used for storing values
     
@@ -94,7 +94,8 @@ class ModelTrainer:
                 }
                 
             }
-
+            
+            # Hyperparameter tuning, Cross-Validation
             model_report:dict=evaluate_models(X_train=X_train,y_train=y_train,X_test=X_test,y_test=y_test,
                                              models=models,param=params) # additional parameters
             
@@ -106,6 +107,8 @@ class ModelTrainer:
                 list(model_report.values()).index(best_model_score)
             ]
             best_model = models[best_model_name]
+            
+            print(best_model)
 
             # 如果 best model score < 0.6, 推断没有合适的 model
             if best_model_score<0.6:
