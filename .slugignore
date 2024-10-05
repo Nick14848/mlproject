@@ -1,0 +1,11 @@
+# Exclude large design files
+*.psd
+*.pdf
+
+# Exclude test and spec files
+/test
+/spec
+
+# Exclude unnecessary logs and temp files
+*.log
+/tmp
